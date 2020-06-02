@@ -1,5 +1,5 @@
 package com.pojtinger.felicitas.hdm.exercises.advanced.objectsAndClasses.binominalsTheRecursiveWay;
 
-public interface BinominalCalculator {
-    long getRecursive(int n, int k);
+public interface BinomialCalculator {
+    long get(int n, int k);
 }
