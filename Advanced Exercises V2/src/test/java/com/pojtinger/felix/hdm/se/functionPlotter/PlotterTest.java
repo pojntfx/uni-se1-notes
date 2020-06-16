@@ -26,8 +26,9 @@ public class PlotterTest {
         this.plotter.setYResolution(25);
         this.plotter.setXResolution(100);
 
+        this.plotter.setYMultiplier(2);
         this.plotter.setXLimit(10);
 
-        System.out.println(this.plotter.printSineWave(16));
+        System.out.println(this.plotter.printSineWave(10));
     }
 }
