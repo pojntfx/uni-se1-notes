@@ -1,6 +1,7 @@
 package com.pojtinger.felicitas.hdm.se.functionPlotter;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class PlotterAnimationTest {
@@ -11,6 +12,7 @@ public class PlotterAnimationTest {
         this.plotter = new PlotterImpl();
     }
 
+    @Disabled
     @Test
     void animateSineWave() throws InterruptedException {
         this.plotter.setYResolution(25);
