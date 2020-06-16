@@ -1,7 +1,5 @@
 package com.pojtinger.felicitas.hdm.se.functionPlotter;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,13 +8,16 @@ public class PlotterTest {
 
     @BeforeEach
     private void setUp() {
-        this.plotter = new Plotter();
+        this.plotter = new PlotterImpl();
     }
 
     @Test
-    void sayHello() {
-        var actual = this.plotter.sayHello();
+    void printSineWave() {
+        this.plotter.setYResolution(25);
+        this.plotter.setXResolution(100);
 
-        assertEquals("Hello!", actual);
+        this.plotter.setXLimit(20);
+
+        this.plotter.printSineWave(8);
     }
 }
