@@ -16,7 +16,7 @@ public class PlotterTest {
         this.plotter.setYResolution(25);
         this.plotter.setXResolution(100);
 
-        this.plotter.setXLimit(20);
+        this.plotter.setXEnd(20);
 
         System.out.println(this.plotter.getGraph((x) -> 10 * Math.sin(x)));
     }
@@ -26,7 +26,7 @@ public class PlotterTest {
         this.plotter.setYResolution(25);
         this.plotter.setXResolution(100);
 
-        this.plotter.setXLimit(20);
+        this.plotter.setXEnd(20);
 
         System.out.println(this.plotter.getGraph((x) -> 10 * Math.cos(x)));
     }
@@ -36,7 +36,7 @@ public class PlotterTest {
         this.plotter.setYResolution(25);
         this.plotter.setXResolution(100);
 
-        this.plotter.setXLimit(20);
+        this.plotter.setXEnd(20);
 
         System.out.println(this.plotter.getGraph((x) -> Math.pow(x, 2)));
     }
@@ -46,7 +46,29 @@ public class PlotterTest {
         this.plotter.setYResolution(25);
         this.plotter.setXResolution(100);
 
-        this.plotter.setXLimit(20);
+        this.plotter.setXEnd(20);
+
+        System.out.println(this.plotter.getGraph((x) -> -Math.pow(x, 2)));
+    }
+
+    @Test
+    void printParabola() throws InterruptedException {
+        this.plotter.setYResolution(25);
+        this.plotter.setXResolution(100);
+
+        this.plotter.setXStart(-20);
+        this.plotter.setXEnd(20);
+
+        System.out.println(this.plotter.getGraph((x) -> Math.pow(x, 2)));
+    }
+
+    @Test
+    void printParabolaInverted() throws InterruptedException {
+        this.plotter.setYResolution(25);
+        this.plotter.setXResolution(100);
+
+        this.plotter.setXStart(-20);
+        this.plotter.setXEnd(20);
 
         System.out.println(this.plotter.getGraph((x) -> -Math.pow(x, 2)));
     }
@@ -56,7 +78,7 @@ public class PlotterTest {
         this.plotter.setYResolution(25);
         this.plotter.setXResolution(100);
 
-        this.plotter.setXLimit(20);
+        this.plotter.setXEnd(20);
 
         System.out.println(this.plotter.getGraph((x) -> 1));
     }
@@ -66,7 +88,7 @@ public class PlotterTest {
         this.plotter.setYResolution(25);
         this.plotter.setXResolution(100);
 
-        this.plotter.setXLimit(20);
+        this.plotter.setXEnd(20);
 
         System.out.println(this.plotter.getGraph((x) -> x));
     }
@@ -76,7 +98,7 @@ public class PlotterTest {
         this.plotter.setYResolution(25);
         this.plotter.setXResolution(100);
 
-        this.plotter.setXLimit(20);
+        this.plotter.setXEnd(20);
 
         System.out.println(this.plotter.getGraph((x) -> Math.log(x)));
     }
@@ -87,7 +109,7 @@ public class PlotterTest {
         this.plotter.setXResolution(100);
 
         this.plotter.setYMultiplier(2);
-        this.plotter.setXLimit(5);
+        this.plotter.setXEnd(5);
 
         System.out.println(this.plotter.getGraph((x) -> 14 * Math.sin(x)));
     }

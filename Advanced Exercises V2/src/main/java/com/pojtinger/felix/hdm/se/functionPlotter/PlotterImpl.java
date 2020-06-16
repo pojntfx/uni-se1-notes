@@ -3,10 +3,12 @@ package com.pojtinger.felicitas.hdm.se.functionPlotter;
 import java.util.Arrays;
 
 public class PlotterImpl implements Plotter {
-    private int yResolution;
-    private int xResolution;
+    private int yResolution = 25;
+    private int xResolution = 100;
 
-    private double xLimit;
+    private double xStart = 0;
+    private double xEnd = 10;
+
     private double yMultiplier = 1;
 
     @Override
@@ -20,8 +22,13 @@ public class PlotterImpl implements Plotter {
     }
 
     @Override
-    public void setXLimit(double xLimit) {
-        this.xLimit = xLimit;
+    public void setXStart(double xStart) {
+        this.xStart = xStart;
+    }
+
+    @Override
+    public void setXEnd(double xEnd) {
+        this.xEnd = xEnd;
     }
 
     @Override
@@ -37,7 +44,7 @@ public class PlotterImpl implements Plotter {
         for (var i = 0; i < this.xResolution; i++) {
             Arrays.fill(screen[i], ".");
 
-            var currentStep = ((double) i / this.xResolution) * this.xLimit;
+            var currentStep = ((double) (i + this.xStart) / this.xResolution) * this.xEnd;
 
             var currentValue = (int) Math
                     .round((this.yResolution / 2) + (this.yMultiplier * yCalc.operate(currentStep)));
@@ -56,4 +63,5 @@ public class PlotterImpl implements Plotter {
 
         return output;
     }
+
 }

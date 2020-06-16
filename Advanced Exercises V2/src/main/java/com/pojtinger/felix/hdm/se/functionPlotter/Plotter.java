@@ -5,7 +5,9 @@ public interface Plotter {
 
     void setXResolution(int xResolution);
 
-    void setXLimit(double xLimit);
+    void setXEnd(double xEnd);
+
+    void setXStart(double xStart);
 
     void setYMultiplier(double yMultiplier);
 
