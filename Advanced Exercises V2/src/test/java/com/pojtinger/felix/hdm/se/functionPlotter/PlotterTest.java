@@ -12,13 +12,73 @@ public class PlotterTest {
     }
 
     @Test
-    void printSineWave() {
+    void printSineWave() throws InterruptedException {
         this.plotter.setYResolution(25);
         this.plotter.setXResolution(100);
 
         this.plotter.setXLimit(20);
 
-        System.out.println(this.plotter.printSineWave(10));
+        System.out.println(this.plotter.getGraph((x) -> 10 * Math.sin(x)));
+    }
+
+    @Test
+    void printCosineWave() throws InterruptedException {
+        this.plotter.setYResolution(25);
+        this.plotter.setXResolution(100);
+
+        this.plotter.setXLimit(20);
+
+        System.out.println(this.plotter.getGraph((x) -> 10 * Math.cos(x)));
+    }
+
+    @Test
+    void printExponential() throws InterruptedException {
+        this.plotter.setYResolution(25);
+        this.plotter.setXResolution(100);
+
+        this.plotter.setXLimit(20);
+
+        System.out.println(this.plotter.getGraph((x) -> Math.pow(x, 2)));
+    }
+
+    @Test
+    void printExponentialInverted() throws InterruptedException {
+        this.plotter.setYResolution(25);
+        this.plotter.setXResolution(100);
+
+        this.plotter.setXLimit(20);
+
+        System.out.println(this.plotter.getGraph((x) -> -Math.pow(x, 2)));
+    }
+
+    @Test
+    void printConstant() throws InterruptedException {
+        this.plotter.setYResolution(25);
+        this.plotter.setXResolution(100);
+
+        this.plotter.setXLimit(20);
+
+        System.out.println(this.plotter.getGraph((x) -> 1));
+    }
+
+    @Test
+    void printLine() throws InterruptedException {
+        this.plotter.setYResolution(25);
+        this.plotter.setXResolution(100);
+
+        this.plotter.setXLimit(20);
+
+        System.out.println(this.plotter.getGraph((x) -> x));
+    }
+
+    @Test
+    void printLog() throws InterruptedException {
+        this.plotter.setYResolution(25);
+        this.plotter.setXResolution(100);
+
+        this.plotter.setXLimit(20);
+
+        System.out.println(this.plotter.getGraph((x) -> Math.log(x)));
     }
 
     @Test
@@ -27,8 +87,8 @@ public class PlotterTest {
         this.plotter.setXResolution(100);
 
         this.plotter.setYMultiplier(2);
-        this.plotter.setXLimit(10);
+        this.plotter.setXLimit(5);
 
-        System.out.println(this.plotter.printSineWave(10));
+        System.out.println(this.plotter.getGraph((x) -> 14 * Math.sin(x)));
     }
 }
