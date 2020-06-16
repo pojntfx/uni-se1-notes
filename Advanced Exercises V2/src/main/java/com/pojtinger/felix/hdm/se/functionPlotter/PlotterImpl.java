@@ -32,9 +32,10 @@ public class PlotterImpl implements Plotter {
 
             var currentStep = ((float) i / this.xResolution) * this.xLimit;
 
-            var currentValue = (this.yResolution / 2) + multiplier * Math.sin(currentStep);
+            var currentValue = (int) Math.round((this.yResolution / 2) + multiplier * Math.sin(currentStep));
 
-            screen[i][(int) Math.round(currentValue)] = "x";
+            if (currentValue >= 0 && Math.abs(currentValue) < this.yResolution)
+                screen[i][currentValue] = "x";
         }
 
         for (var i = 0; i < this.yResolution; i++) {

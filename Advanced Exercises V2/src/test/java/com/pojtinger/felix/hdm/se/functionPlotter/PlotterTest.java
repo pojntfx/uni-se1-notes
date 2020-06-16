@@ -18,6 +18,16 @@ public class PlotterTest {
 
         this.plotter.setXLimit(20);
 
-        this.plotter.printSineWave(8);
+        this.plotter.printSineWave(10);
+    }
+
+    @Test
+    void printSineWaveWithCutoff() {
+        this.plotter.setYResolution(25);
+        this.plotter.setXResolution(100);
+
+        this.plotter.setXLimit(10);
+
+        this.plotter.printSineWave(16);
     }
 }
