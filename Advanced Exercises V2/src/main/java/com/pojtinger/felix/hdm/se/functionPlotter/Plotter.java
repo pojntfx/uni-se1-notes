@@ -5,7 +5,9 @@ public interface Plotter {
 
     void setXResolution(int xResolution);
 
-    void setXLimit(int xLimit);
+    void setXLimit(float xLimit);
 
-    void printSineWave(int multiplier);
+    void setYMultiplier(float yMultiplier);
+
+    String printSineWave(float multiplier);
 }

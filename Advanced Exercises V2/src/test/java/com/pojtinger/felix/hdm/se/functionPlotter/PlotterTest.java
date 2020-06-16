@@ -18,7 +18,7 @@ public class PlotterTest {
 
         this.plotter.setXLimit(20);
 
-        this.plotter.printSineWave(10);
+        System.out.println(this.plotter.printSineWave(10));
     }
 
     @Test
@@ -28,6 +28,6 @@ public class PlotterTest {
 
         this.plotter.setXLimit(10);
 
-        this.plotter.printSineWave(16);
+        System.out.println(this.plotter.printSineWave(16));
     }
 }

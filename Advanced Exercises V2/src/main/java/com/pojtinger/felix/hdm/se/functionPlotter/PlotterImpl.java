@@ -6,7 +6,8 @@ public class PlotterImpl implements Plotter {
     private int yResolution;
     private int xResolution;
 
-    private int xLimit;
+    private float xLimit;
+    private float yMultiplier;
 
     @Override
     public void setYResolution(int yResolution) {
@@ -19,13 +20,19 @@ public class PlotterImpl implements Plotter {
     }
 
     @Override
-    public void setXLimit(int xLimit) {
+    public void setXLimit(float xLimit) {
         this.xLimit = xLimit;
     }
 
     @Override
-    public void printSineWave(int multiplier) {
+    public void setYMultiplier(float yMultiplier) {
+        this.yMultiplier = yMultiplier;
+    }
+
+    @Override
+    public String printSineWave(float multiplier) {
         var screen = new String[this.xResolution][this.yResolution];
+        var output = "";
 
         for (var i = 0; i < this.xResolution; i++) {
             Arrays.fill(screen[i], ".");
@@ -40,11 +47,12 @@ public class PlotterImpl implements Plotter {
 
         for (var i = 0; i < this.yResolution; i++) {
             for (var o = 0; o < this.xResolution; o++) {
-                System.out.print(screen[o][i]);
+                output += screen[o][i];
             }
 
-            System.out.println();
+            output += "\n";
         }
 
+        return output;
     }
 }
